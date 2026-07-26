@@ -130,7 +130,7 @@ body.has-cursor a, body.has-cursor button, body.has-cursor select, body.has-curs
 .hdr__inner { position: relative; z-index: 1; width: var(--wrap); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 18px 0; transition: padding .35s; }
 .hdr--solid .hdr__inner { padding: 12px 0; }
 .crest { display: inline-flex; align-items: center; }
-.crest__img { height: 52px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); }
+.crest__img { height: clamp(56px, 6vw, 82px); width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); }
 .hdr__right { display: flex; align-items: center; gap: 22px; }
 .hdr__top { display: flex; gap: 24px; }
 .hdr__top a { color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .92; }
@@ -446,7 +446,7 @@ body.has-cursor a, body.has-cursor button, body.has-cursor select, body.has-curs
    ============================================================ */
 .foot { background: #06203f; color: #fff; padding: clamp(64px, 8vw, 100px) 0 36px; }
 .foot__grid { padding-bottom: 54px; }
-.foot__logo { height: 60px; width: auto; margin-bottom: 22px; }
+.foot__logo { height: 82px; width: auto; margin-bottom: 22px; }
 .foot__brand p { color: rgba(255,255,255,.82); max-width: 340px; }
 .foot__social { display: flex; gap: 12px; margin-top: 22px; }
 .foot__social a { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.4); display: grid; place-items: center; font-size: 14px; transition: .2s; }
