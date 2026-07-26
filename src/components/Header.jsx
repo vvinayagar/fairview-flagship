@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { topNav, menuNav, stages } from '../data.js'
+import { openCampusChooser } from './CampusChooser.jsx'
 
 function Crest() {
   return (
-    <a href="#top" className="crest" aria-label="Fairview International School — home">
+    <Link to="/" className="crest" aria-label="Fairview International School — home">
       <img className="crest__img" src="/fairview-logo-white.png" alt="Fairview International School" />
-    </a>
+    </Link>
   )
 }
 
@@ -13,6 +15,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [hovered, setHovered] = useState(0)
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -29,7 +32,7 @@ export default function Header() {
     return () => window.removeEventListener('keydown', onKey)
   }, [menuOpen])
 
-  const solid = scrolled || menuOpen
+  const solid = scrolled || menuOpen || pathname !== '/'
 
   return (
     <>
@@ -40,7 +43,8 @@ export default function Header() {
             <nav className="hdr__top" aria-label="Utility">
               {topNav.map(n => <a key={n} href="#" data-magnetic>{n}</a>)}
             </nav>
-            <a href="#enquire" className="hdr__cta" data-magnetic>Book a Tour</a>
+            <button className="hdr__cta hdr__cta--ghost" data-magnetic onClick={openCampusChooser}>Choose campus</button>
+            <Link to="/#enquire" className="hdr__cta" data-magnetic>Book a Tour</Link>
             <button
               className={`burger ${menuOpen ? 'burger--x' : ''}`}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -57,7 +61,8 @@ export default function Header() {
         <div className="menu__inner">
           <nav className="menu__links" aria-label="Primary">
             {menuNav.map((n, idx) => (
-              <a key={n} href="#" onClick={() => setMenuOpen(false)} style={{ '--i': idx }}>
+              <a key={n} href="#" style={{ '--i': idx }}
+                onClick={e => { e.preventDefault(); setMenuOpen(false); if (n === 'Our Campuses') openCampusChooser() }}>
                 <span>{n}</span>
               </a>
             ))}

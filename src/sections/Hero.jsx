@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { heroVideo, heroPoster, socials } from '../data.js'
 import { prefersReducedMotion } from '../anim.js'
+import { openCampusChooser } from '../components/CampusChooser.jsx'
 
 /* Ambient particle drift over the hero video — light, GPU-cheap, and skipped
    entirely for reduced motion. */
@@ -94,7 +95,7 @@ export default function Hero() {
           further, and earns a place at the world’s leading universities.
         </p>
         <div className="hero__cta">
-          <a href="#campus" className="btn btn--gold" data-magnetic>Find a Fairview near you</a>
+          <button className="btn btn--gold" data-magnetic onClick={openCampusChooser}>Find a Fairview near you</button>
           <a href="#numbers" className="btn btn--ghost" data-magnetic>Why Fairview</a>
         </div>
       </div>
