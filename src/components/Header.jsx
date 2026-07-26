@@ -66,6 +66,11 @@ export default function Header() {
                 <span>{n}</span>
               </a>
             ))}
+            {/* mobile-only actions (the header CTAs are hidden on small screens) */}
+            <div className="menu__actions">
+              <button className="menu__cta menu__cta--ghost" onClick={() => { setMenuOpen(false); openCampusChooser() }}>Choose campus</button>
+              <Link to="/#enquire" className="menu__cta menu__cta--gold" onClick={() => setMenuOpen(false)}>Book a Tour</Link>
+            </div>
           </nav>
           <div className="menu__side">
             {/* Right-side image swaps as you hover a stage card below. */}

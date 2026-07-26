@@ -471,6 +471,12 @@ body.has-cursor a, body.has-cursor button, body.has-cursor select, body.has-curs
 /* ============================================================
    Responsive
    ============================================================ */
+/* in-menu action buttons — shown only on mobile (header CTAs hide there) */
+.menu__actions { display: none; flex-direction: column; gap: 12px; margin-top: 22px; width: 100%; max-width: 340px; }
+.menu__cta { display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; padding: 15px 24px; border-radius: 40px; border: none; cursor: pointer; font-family: var(--sans); }
+.menu__cta--gold { background: var(--gold); color: var(--navy); }
+.menu__cta--ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.55); }
+
 @media (max-width: 991px) {
   .hdr__top { display: none; }
   /* full-screen menu becomes a scrollable single column; the side image + stage
@@ -488,6 +494,13 @@ body.has-cursor a, body.has-cursor button, body.has-cursor select, body.has-curs
   .c-arrow--l { left: 4px; } .c-arrow--r { right: 4px; }
 }
 @media (max-width: 767px) {
+  /* declutter the header on phones: drop the two text CTAs (they live in the
+     menu now), leave just the logo + burger with breathing room */
+  .hdr__cta { display: none; }
+  .hdr__right { gap: 12px; }
+  .hdr__inner { padding: 14px 0; }
+  .menu__actions { display: flex; }
+  .crest__img { height: clamp(46px, 12vw, 60px); }
   /* hero stays a fixed 100vh banner so the shrink-on-scroll animation runs on
      mobile too; content is centred and sized to fit one screen. */
   .hero { min-height: 100svh; height: 100svh; align-items: center; padding: 88px 0 64px; }

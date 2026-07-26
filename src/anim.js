@@ -219,13 +219,27 @@ export function initAnimations() {
     magnets.push([el, move, reset])
   })
 
-  /* ---- settle: refresh triggers once media/fonts load ---- */
-  const settle = () => ScrollTrigger.refresh()
+  /* ---- settle: refresh triggers once media/fonts load, then a safety pass so
+     no reveal target can stay stuck hidden (e.g. after a client-side route
+     change or slow image load, esp. on mobile) ---- */
+  const settle = () => {
+    ScrollTrigger.refresh()
+    const vh = window.innerHeight
+    gsap.utils.toArray('[data-reveal], [data-reveal-item]').forEach(el => {
+      const r = el.getBoundingClientRect()
+      // reveal anything already within (or scrolled past the top of) the viewport
+      if (r.top < vh * 0.95 && getComputedStyle(el).opacity === '0') {
+        gsap.to(el, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
+      }
+    })
+  }
   window.addEventListener('load', settle)
-  const settleTimer = setTimeout(settle, 1400)
+  const settleTimer = setTimeout(settle, 1200)
+  const settleTimer2 = setTimeout(settle, 2600)
 
   return () => {
     clearTimeout(settleTimer)
+    clearTimeout(settleTimer2)
     window.removeEventListener('load', settle)
     magnets.forEach(([el, move, reset]) => {
       el.removeEventListener('mousemove', move)
