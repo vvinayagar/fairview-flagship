@@ -105,7 +105,7 @@ export default function Pillars() {
           </div>
           <div className="pillars__photo col-12 col-md-6">
             <div className="puzzle-stage" ref={stageRef}>
-              <img ref={imgRef} src={p.photo} alt={p.title} />
+              <img ref={imgRef} src={p.photo} alt={p.title} loading="lazy" decoding="async" />
               <div className="puzzle-layer" ref={layerRef} aria-hidden />
             </div>
           </div>
