@@ -31,7 +31,7 @@ function Particles() {
         if (d.x < -5) d.x = w + 5; if (d.x > w + 5) d.x = -5
         ctx.beginPath()
         ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(244,211,0,${d.a})`
+        ctx.fillStyle = `rgba(250,212,0,${d.a})`
         ctx.fill()
       })
       raf = requestAnimationFrame(tick)

@@ -115,19 +115,19 @@ export const skills = [
       { title: 'Communicators', text: 'Expressing ideas confidently in more than one language and in many ways.' },
       { title: 'Open-minded', text: 'Appreciating our own cultures and valuing the perspectives of others.' },
     ] },
-  { key: 'Principled', color: '#ec8500',
+  { key: 'Principled', color: '#fad400',
     blurb: 'Acting with integrity and care: “I do the right thing and take responsibility for my actions and their consequences.”',
     items: [
       { title: 'Principled', text: 'Acting with integrity, honesty and a strong sense of fairness.' },
       { title: 'Caring', text: 'Showing empathy, compassion and respect in service to others.' },
     ] },
-  { key: 'Balanced', color: '#f4b333',
+  { key: 'Balanced', color: '#fad400',
     blurb: 'Nurturing the whole self: “I look after my mind, body and heart, and support the wellbeing of those around me.”',
     items: [
       { title: 'Balanced', text: 'Understanding the importance of intellectual, physical and emotional wellbeing.' },
       { title: 'Reflective', text: 'Thoughtfully considering our learning, strengths and areas to grow.' },
     ] },
-  { key: 'Courageous', color: '#f4b333',
+  { key: 'Courageous', color: '#fad400',
     blurb: 'Growing through challenge: “I approach the unfamiliar with resourcefulness, resilience and belief in myself.”',
     items: [
       { title: 'Risk-takers', text: 'Approaching uncertainty with forethought, resourcefulness and resilience.' },
