@@ -135,14 +135,14 @@ body.has-cursor a, body.has-cursor button, body.has-cursor select, body.has-curs
 .hdr__top { display: flex; gap: 24px; }
 .hdr__top a { color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; opacity: .92; }
 .hdr__top a:hover { opacity: 1; color: var(--gold); }
-.hdr__cta { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 13px; padding: 11px 22px; border-radius: 40px; border: none; cursor: pointer; transition: background .2s, color .2s; font-family: var(--sans); }
-.hdr__cta:hover { background: #ffe74d; }
+.hdr__cta { background: var(--gold); color: var(--navy); font-weight: 700; font-size: 13px; padding: 11px 22px; border-radius: 40px; border: none; cursor: pointer; transition: filter .2s, color .2s; font-family: var(--sans); }
+.hdr__cta:hover { filter: brightness(.92); }
 .hdr__cta--ghost { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.55); }
 .hdr--solid .hdr__cta--ghost { border-color: rgba(255,255,255,.4); }
 .hdr__cta--ghost:hover { background: #fff; color: var(--navy); border-color: #fff; }
-.burger { width: 50px; height: 50px; background: var(--orange); border: none; display: grid; place-content: center; gap: 5px; cursor: pointer; border-radius: 4px; transition: background .2s; }
-.burger:hover { background: #ff9614; }
-.burger span { display: block; width: 22px; height: 2px; background: #fff; transition: transform .3s, opacity .2s; }
+.burger { width: 50px; height: 50px; background: var(--gold); border: none; display: grid; place-content: center; gap: 5px; cursor: pointer; border-radius: 4px; transition: filter .2s; }
+.burger:hover { filter: brightness(.92); }
+.burger span { display: block; width: 22px; height: 2px; background: var(--navy); transition: transform .3s, opacity .2s; }
 .burger--x span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .burger--x span:nth-child(2) { opacity: 0; }
 .burger--x span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -402,7 +402,7 @@ body.has-cursor a, body.has-cursor button, body.has-cursor select, body.has-curs
 .campus-card__meta { display: flex; flex-wrap: wrap; gap: 6px; }
 .campus-card__age { font-size: 12px; font-weight: 700; color: var(--ink); }
 .campus-card__more { margin-top: auto; align-self: flex-start; font-size: 13px; font-weight: 700; color: var(--navy); background: var(--gold); padding: 9px 18px; border-radius: 24px; transition: .2s; }
-.campus-card__more:hover { background: #ffe74d; }
+.campus-card__more:hover { filter: brightness(.92); }
 
 /* ============================================================
    10 News
